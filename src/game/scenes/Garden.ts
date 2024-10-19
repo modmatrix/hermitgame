@@ -9,6 +9,10 @@ export default class Garden extends Scene {
     super('Garden')
   }
 
+  preload() {
+    this.load.audio('bgm', 'assets/music/labyrinth.mp3');
+  }
+
   create() {
 
     this.camera = this.cameras.main
@@ -22,6 +26,18 @@ export default class Garden extends Scene {
 
     this.physics.add.collider(this.player, solidObjects)
 
+
+    const bgm = this.sound.add('bgm')
+
+    bgm.play({
+      mute: false,
+      volume: 1,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: true,
+      delay: 0,
+    })
 
     // this.gameText = this.add.text(512, 384, 'Make something fun!\nand share it with us:\nsupport@phaser.io', {
     //   fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
