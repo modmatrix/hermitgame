@@ -11,7 +11,7 @@ export default class Player extends GameObjects.Sprite {
 
     this.scene.add.existing(this)
     this.scene.physics.add.existing(this)
-    // this.setCollideWorldBounds(true)
+    this.body.setCollideWorldBounds(true)
 
   }
 

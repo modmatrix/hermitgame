@@ -17,7 +17,11 @@ export default class Garden extends Scene {
 
     this.player = new Player(this, 100, 200);
 
-    // const bush = this.add.image(300, 300, 'star')
+    const solidObjects = this.physics.add.staticGroup()
+    solidObjects.create(300, 300, 'star')
+
+    this.physics.add.collider(this.player, solidObjects)
+
 
     // this.gameText = this.add.text(512, 384, 'Make something fun!\nand share it with us:\nsupport@phaser.io', {
     //   fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
