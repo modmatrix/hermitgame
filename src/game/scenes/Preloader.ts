@@ -12,6 +12,8 @@ export default class Preloader extends Scene {
       frameWidth: 32, frameHeight: 48
     })
 
+    this.load.image('star', 'assets/star.png')
+
   }
 
   create () {
