@@ -42,7 +42,8 @@ export default class Preloader extends Scene {
     )
 
     this.load.on('complete', () => {
-      this.scene.start('MainMenu');
+      // this.scene.start('MainMenu');
+      this.scene.start('Garden');
     }, this)
 
   }

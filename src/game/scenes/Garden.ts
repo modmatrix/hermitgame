@@ -59,7 +59,9 @@ export default class Garden extends Scene {
 
     this.tileSetBg = this.tileMap.addTilesetImage('grass-spritesheet')
 
-    this.tileMap.createLayer('background', this.tileSetBg);
+    this.tileMap.createLayer('background', this.tileSetBg)
+
+    this.physics.world.setBounds(0, 0, this.tileMap.widthInPixels, this.tileMap.heightInPixels)
 
     /*
     this.tileSet = this.tileMap.addTilesetImage("softbricks");
