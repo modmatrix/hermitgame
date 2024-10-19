@@ -19,7 +19,9 @@ export default class Garden extends Scene {
     this.camera.setBackgroundColor(0x00ff00)
     this.camera.setBackgroundColor(0x00ff00)
 
+
     this.player = new Player(this, 100, 200);
+    this.camera.startFollow(this.player);
 
     const solidObjects = this.physics.add.staticGroup()
     solidObjects.create(300, 300, 'star')
