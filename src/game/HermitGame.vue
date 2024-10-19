@@ -15,6 +15,7 @@ import { AUTO, Game } from 'phaser'
 import Boot from './scenes/Boot'
 import Preloader from './scenes/Preloader'
 import Garden from './scenes/Garden'
+import MainMenu from './scenes/MainMenu'
 
 const game = ref()
 
@@ -35,6 +36,7 @@ onMounted(() => {
     scene: [
       Boot,
       Preloader,
+      MainMenu,
       Garden,
     ],
   })

@@ -12,6 +12,7 @@ export default class Preloader extends Scene {
       frameWidth: 32, frameHeight: 48
     })
 
+    this.load.image('main-menu-bg', 'assets/main-menu-bg.png')
     this.load.image('star', 'assets/star.png')
 
   }
@@ -21,7 +22,7 @@ export default class Preloader extends Scene {
     //  For example, you can define global animations here, so we can use them in other scenes.
 
     //  Move to the MainMenu. You could also swap this for a Scene Transition, such as a camera fade.
-    this.scene.start('Garden')
+    this.scene.start('MainMenu')
     
   }
 

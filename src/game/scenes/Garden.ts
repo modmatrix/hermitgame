@@ -10,7 +10,7 @@ export default class Garden extends Scene {
   }
 
   preload() {
-    this.load.audio('bgm', 'assets/music/labyrinth.mp3');
+    this.load.audio('shadows', 'assets/music/shadows.mp3');
   }
 
   create() {
@@ -26,8 +26,7 @@ export default class Garden extends Scene {
 
     this.physics.add.collider(this.player, solidObjects)
 
-
-    const bgm = this.sound.add('bgm')
+    const bgm = this.sound.add('shadows')
 
     bgm.play({
       mute: false,
