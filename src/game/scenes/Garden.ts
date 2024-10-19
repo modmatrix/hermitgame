@@ -11,17 +11,18 @@ export default class Garden extends Scene {
 
   preload() {
     this.load.audio('shadows', 'assets/music/shadows.mp3');
+    this.load.tilemapTiledJSON('garden-map', 'assets/maps/garden.json');
   }
 
   create() {
 
     this.camera = this.cameras.main
-    this.camera.setBackgroundColor(0x00ff00)
-    this.camera.setBackgroundColor(0x00ff00)
+    this.camera.setBackgroundColor(0x72751b)
 
+    this.createMap()
 
-    this.player = new Player(this, 100, 200);
-    this.camera.startFollow(this.player);
+    this.player = new Player(this, 100, 200)
+    this.camera.startFollow(this.player)
 
     const solidObjects = this.physics.add.staticGroup()
     solidObjects.create(300, 300, 'star')
@@ -45,6 +46,42 @@ export default class Garden extends Scene {
     //   stroke: '#000000', strokeThickness: 8,
     //   align: 'center'
     // }).setOrigin(0.5).setDepth(100);
+
+  }
+
+  createMap() {
+
+    this.tileMap = this.make.tilemap({
+      key: 'garden-map',
+      tileWidth: 32,
+      tileHeight: 32,
+    })
+
+    this.tileSetBg = this.tileMap.addTilesetImage('grass-spritesheet')
+
+    this.tileMap.createLayer('background', this.tileSetBg);
+
+    /*
+    this.tileSet = this.tileMap.addTilesetImage("softbricks");
+
+    this.platform = this.tileMap.createLayer(
+    "scene" + this.number,
+    this.tileSet
+    );
+
+    this.objectsLayer = this.tileMap.getObjectLayer("objects");
+    this.platform.setCollisionByExclusion([-1]);
+    this.batGroup = this.add.group();
+    this.zombieGroup = this.add.group();
+    this.foesGroup = this.add.group();
+    this.turnGroup = this.add.group();
+    this.exitGroup = this.add.group();
+    this.platformGroup = this.add.group();
+    this.lunchBoxGroup = this.add.group();
+    this.bricks = this.add.group();
+    this.addsObjects();
+    this.addColliders();
+    */
 
   }
 
