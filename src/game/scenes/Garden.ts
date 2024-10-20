@@ -11,7 +11,9 @@ export default class Garden extends Scene {
 
   preload() {
     this.load.audio('shadows', 'assets/music/shadows.mp3');
-    this.load.tilemapTiledJSON('garden-map', 'assets/maps/garden.json');
+
+    this.load.image('grass-tileset', 'assets/tilesets/grass.png')
+    this.load.tilemapTiledJSON('garden-map', 'assets/maps/garden.json')
   }
 
   create() {
@@ -57,9 +59,9 @@ export default class Garden extends Scene {
       tileHeight: 32,
     })
 
-    this.tileSetBg = this.tileMap.addTilesetImage('grass-spritesheet')
+    const tileSet = this.tileMap.addTilesetImage('grass', 'grass-tileset')
 
-    this.tileMap.createLayer('background', this.tileSetBg)
+    this.tileMap.createLayer('base', tileSet)
 
     this.physics.world.setBounds(0, 0, this.tileMap.widthInPixels, this.tileMap.heightInPixels)
 

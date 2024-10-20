@@ -54,10 +54,10 @@ export default class Preloader extends Scene {
       frameWidth: 32, frameHeight: 48
     })
 
-    this.load.spritesheet('grass-spritesheet', 'assets/grass-spritesheet.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    })
+    // this.load.spritesheet('grass-spritesheet', 'assets/grass-spritesheet.png', {
+    //   frameWidth: 32,
+    //   frameHeight: 32,
+    // })
 
     this.load.image('main-menu-bg', 'assets/main-menu-bg.png')
     this.load.image('star', 'assets/star.png')
