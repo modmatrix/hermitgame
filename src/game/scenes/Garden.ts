@@ -41,8 +41,9 @@ export default class Garden extends Scene {
 
     // https://stackoverflow.com/questions/34214162/creating-a-collision-layer-in-phaser-using-json-and-tiled
     // Set collision with player (can also be a group)
-    this.obstacleLayer.setCollisionByExclusion([-1]);
-    this.physics.add.collider(this.player, this.obstacleLayer);
+    // this.obstacleLayer.setCollisionByExclusion([-1])
+    this.obstacleLayer.setCollisionFromCollisionGroup(true, true)
+    this.physics.add.collider(this.player, this.obstacleLayer)
 
     const bgm = this.sound.add('shadows')
 

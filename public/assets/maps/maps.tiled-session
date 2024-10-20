@@ -26,8 +26,9 @@
             "scaleInEditor": 3
         }
     },
-    "last.exportedFilePath": "/Users/travismiller/Desktop/hermitgame/public/assets/maps/garden",
+    "last.exportedFilePath": "/Users/travismiller/Desktop/hermitgame/public/assets/maps/tilesets/glade/ground",
     "last.imagePath": "/Users/travismiller/Desktop/hermitgame/public/assets/maps/tilesets/glade/ground",
+    "lastUsedTilesetExportFilter": "JSON tileset files (*.tsj *.json)",
     "map.height": 32,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",

@@ -7,7 +7,7 @@
   <image source="../tilesets/glade/ground/glade_ground.png" width="336" height="256"/>
   <tile id="0">
    <objectgroup draworder="index" id="2">
-    <object id="1" x="5" y="6" width="11" height="10"/>
+    <object id="2" x="5" y="6" width="11" height="10"/>
    </objectgroup>
   </tile>
   <tile id="1">
