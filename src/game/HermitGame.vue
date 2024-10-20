@@ -9,7 +9,7 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
 // Phaser
-import { AUTO, Game } from 'phaser'
+import { AUTO, Game, Scale, Types } from 'phaser'
 
 // scenes
 import Boot from './scenes/Boot'
@@ -23,10 +23,8 @@ onMounted(() => {
 
   game.value = new Game({
     type: AUTO,
-    // width: 1024,
-    // height: 768,
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 1024,
+    height: 768,
     parent: 'game-container',
     backgroundColor: '#028af8',
     physics: {
@@ -41,7 +39,12 @@ onMounted(() => {
       MainMenu,
       Garden,
     ],
-  })
+    pixelArt: true,
+    scale: {
+        mode: Scale.ScaleModes.FIT,
+        autoCenter: Scale.CenterType,
+    } //: Types.Core.ScaleConfig
+  } /*: Types.Core.GameConfig */)
 
 })
 
