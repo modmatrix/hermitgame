@@ -1,6 +1,8 @@
 import { Scene } from 'phaser'
 import Player from '../Player'
 
+import Bush from '../objects/Bush'
+
 export default class Garden extends Scene {
 
   camera: Phaser.Cameras.Scene2D.Camera
@@ -23,13 +25,18 @@ export default class Garden extends Scene {
 
     this.createMap()
 
-    this.player = new Player(this, 100, 200)
+    this.player = new Player(this, 1280, 1280)
     this.camera.startFollow(this.player)
 
-    const solidObjects = this.physics.add.staticGroup()
-    solidObjects.create(300, 300, 'star')
+    this.groups = {
+      solid: this.physics.add.staticGroup(),
+    }
 
-    this.physics.add.collider(this.player, solidObjects)
+    this.groups.solid.create(1100, 1100, 'star')
+
+    this.addObjects()
+
+    this.physics.add.collider(this.player, this.groups.solid, () => null, () => true, this)
 
     const bgm = this.sound.add('shadows')
 
@@ -65,6 +72,8 @@ export default class Garden extends Scene {
 
     this.physics.world.setBounds(0, 0, this.tileMap.widthInPixels, this.tileMap.heightInPixels)
 
+    this.objectsLayer = this.tileMap.getObjectLayer('objects')
+
     /*
     this.tileSet = this.tileMap.addTilesetImage("softbricks");
 
@@ -73,7 +82,6 @@ export default class Garden extends Scene {
     this.tileSet
     );
 
-    this.objectsLayer = this.tileMap.getObjectLayer("objects");
     this.platform.setCollisionByExclusion([-1]);
     this.batGroup = this.add.group();
     this.zombieGroup = this.add.group();
@@ -86,6 +94,20 @@ export default class Garden extends Scene {
     this.addsObjects();
     this.addColliders();
     */
+
+  }
+
+  addObjects() {
+    
+    this.objectsLayer.objects.forEach((object) => {
+
+      if (object.name === 'bush') {
+        // let bush = new Bush(this, object.x, object.y)
+        // this.groups.solid.add(bush)
+        this.groups.solid.create(object.x, object.y, 'bush')
+      }
+
+    })
 
   }
 

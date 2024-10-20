@@ -54,6 +54,12 @@ export default class Preloader extends Scene {
       frameWidth: 32, frameHeight: 48
     })
 
+    this.load.spritesheet('bush', 'assets/objects/bush.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    })
+
+
     // this.load.spritesheet('grass-spritesheet', 'assets/grass-spritesheet.png', {
     //   frameWidth: 32,
     //   frameHeight: 32,

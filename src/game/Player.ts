@@ -9,9 +9,10 @@ export default class Player extends GameObjects.Sprite {
     this.createAnimations()
     this.createControls()
 
-    this.scene.add.existing(this)
     this.scene.physics.add.existing(this)
+    // this.scene.physics.world.enable(this)
     this.body.setCollideWorldBounds(true)
+    this.scene.add.existing(this)
 
   }
 
