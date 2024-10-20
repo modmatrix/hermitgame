@@ -1,0 +1,49 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "garden/garden.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "": {
+            "scaleInEditor": 3
+        },
+        "garden/garden.tmx": {
+            "scale": 2.16904296875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 255.8732159740669,
+                "y": 255.87321597406694
+            }
+        },
+        "garden/garden.tmx#glade_ground": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "garden/garden.tmx#glade_water": {
+            "scaleInEditor": 3
+        }
+    },
+    "last.exportedFilePath": "/Users/travismiller/Desktop/hermitgame/public/assets/maps/garden",
+    "last.imagePath": "/Users/travismiller/Desktop/hermitgame/public/assets/maps/tilesets/glade/ground",
+    "map.height": 32,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 32,
+    "openFiles": [
+        "garden/garden.tmx"
+    ],
+    "project": "maps.tiled-project",
+    "recentFiles": [
+        "garden/garden.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

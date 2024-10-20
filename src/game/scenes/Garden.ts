@@ -14,8 +14,8 @@ export default class Garden extends Scene {
   preload() {
     this.load.audio('shadows', 'assets/music/shadows.mp3');
 
-    this.load.image('grass-tileset', 'assets/tilesets/grass.png')
-    this.load.tilemapTiledJSON('garden-map', 'assets/maps/garden.json')
+    this.load.image('glade_ground_spritemap', 'assets/maps/tilesets/glade/ground/glade_ground.png')
+    this.load.tilemapTiledJSON('garden-map', 'assets/maps/garden/garden.tmj')
   }
 
   create() {
@@ -23,20 +23,26 @@ export default class Garden extends Scene {
     this.camera = this.cameras.main
     this.camera.setBackgroundColor(0x72751b)
 
+
     this.createMap()
 
-    this.player = new Player(this, 1280, 1280)
+    this.player = new Player(this, 240, 300)
     this.camera.startFollow(this.player)
 
     this.groups = {
       solid: this.physics.add.staticGroup(),
     }
 
-    this.groups.solid.create(1100, 1100, 'star')
+    // this.groups.solid.create(1100, 1100, 'star')
 
-    this.addObjects()
+    // this.addObjects()
 
     this.physics.add.collider(this.player, this.groups.solid, () => null, () => true, this)
+
+    // https://stackoverflow.com/questions/34214162/creating-a-collision-layer-in-phaser-using-json-and-tiled
+    // Set collision with player (can also be a group)
+    this.obstacleLayer.setCollisionByExclusion([-1]);
+    this.physics.add.collider(this.player, this.obstacleLayer);
 
     const bgm = this.sound.add('shadows')
 
@@ -66,13 +72,18 @@ export default class Garden extends Scene {
       tileHeight: 32,
     })
 
-    const tileSet = this.tileMap.addTilesetImage('grass', 'grass-tileset')
+    const gladeGroundTileSet = this.tileMap.addTilesetImage('glade_ground', 'glade_ground_spritemap')
 
-    this.tileMap.createLayer('base', tileSet)
+    this.tileMap.createLayer('base', gladeGroundTileSet)
+    this.tileMap.createLayer('grass', gladeGroundTileSet)
+    this.obstacleLayer = this.tileMap.createLayer('obstacles', gladeGroundTileSet)
+
+    // https://rexrainbow.github.io/phaser3-rex-notes/docs/site/tilemap/#collision
+    // this.tileMap.setCollisionByProperty({key:value});
 
     this.physics.world.setBounds(0, 0, this.tileMap.widthInPixels, this.tileMap.heightInPixels)
 
-    this.objectsLayer = this.tileMap.getObjectLayer('objects')
+    // this.objectsLayer = this.tileMap.getObjectLayer('objects')
 
     /*
     this.tileSet = this.tileMap.addTilesetImage("softbricks");
