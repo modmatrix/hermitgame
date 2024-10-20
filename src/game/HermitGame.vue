@@ -23,8 +23,10 @@ onMounted(() => {
 
   game.value = new Game({
     type: AUTO,
-    width: 1024,
-    height: 768,
+    // width: 1024,
+    // height: 768,
+    width: window.innerWidth,
+    height: window.innerHeight,
     parent: 'game-container',
     backgroundColor: '#028af8',
     physics: {
